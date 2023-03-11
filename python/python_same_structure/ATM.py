@@ -1,4 +1,6 @@
 from bank_members import *
+from ATM_exception import *
+import input_output
 
 # MultiBank, English 만을 지원하는 ATM을 상속 없이 만들어둠.
 # 어차피 아두이노에 물려서 사용할거니까 영어만 출력해도 됨.
@@ -26,17 +28,29 @@ class Atm:
         self.transac_history = ""
         
 
-    def Deposit(a: Account):
+    def Deposit(self, a: Account):
+        button = 0
+        # how many cash get during Deposit. last index is check.
+        input_won = [0, 0, 0, 0, 0]
+        total_amount = 0
+        while(True):
+            input_output.output_display("Select type of money\nSelect a number\n1. Cash | 2. Check | 3. Exit")
+            button = int(input())
+            if(button == 1):
+                pass
+
+
+    def Withdrawal(self, a: Account):
         pass
 
 
-    def Withdrawal(a: Account):
+    def Transfer(self, a1: Account, a2: Account):
         pass
 
 
-    def Transfer(a1: Account, a2: Account):
+    def user_Authorize(self, a: Account):
         pass
 
 
-    def user_Authorize(a: Account):
+    def Session_start(self):
         pass
